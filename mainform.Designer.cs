@@ -60,11 +60,11 @@
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 25F);
             title.ForeColor = SystemColors.Highlight;
-            title.Location = new Point(451, 12);
+            title.Location = new Point(537, 9);
             title.Name = "title";
-            title.Size = new Size(257, 46);
+            title.Size = new Size(98, 46);
             title.TabIndex = 0;
-            title.Text = "HOSPITAL TITLE";
+            title.Text = "TITLE";
             title.Click += title_Click;
             // 
             // mainform

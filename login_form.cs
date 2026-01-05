@@ -33,7 +33,9 @@ namespace WinFormsApp1
 
         private void login_confirm_button_Click(object sender, EventArgs e)
         {
-            parent.loadform(new Dashboard());
+
+            parent.DialogResult = DialogResult.OK;
+            parent.Close();
         }
     }
 }

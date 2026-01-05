@@ -11,7 +11,13 @@ namespace WinFormsApp1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new mainform());
+            mainform a = new mainform();
+            DialogResult result = a.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                Application.Run(new Dashboard());
+            }
         }
     }
 }
