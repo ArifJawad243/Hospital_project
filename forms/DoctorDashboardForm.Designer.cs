@@ -16,7 +16,6 @@
 
         private ComboBox cmbStatus;
         private Button btnUpdateStatus;
-        private Button btnViewHistory;
 
         protected override void Dispose(bool disposing)
         {
@@ -36,7 +35,6 @@
             dgvAppointments = new DataGridView();
             cmbStatus = new ComboBox();
             btnUpdateStatus = new Button();
-            btnViewHistory = new Button();
             mainpanel = new Panel();
             txtDiagnosis = new TextBox();
             label1 = new Label();
@@ -146,23 +144,9 @@
             btnUpdateStatus.UseVisualStyleBackColor = false;
             btnUpdateStatus.Click += btnUpdateStatus_Click;
             // 
-            // btnViewHistory
-            // 
-            btnViewHistory.Anchor = AnchorStyles.None;
-            btnViewHistory.BackColor = Color.FromArgb(63, 81, 181);
-            btnViewHistory.FlatStyle = FlatStyle.Flat;
-            btnViewHistory.ForeColor = Color.White;
-            btnViewHistory.Location = new Point(1027, 625);
-            btnViewHistory.Name = "btnViewHistory";
-            btnViewHistory.Size = new Size(108, 35);
-            btnViewHistory.TabIndex = 7;
-            btnViewHistory.Text = "View History";
-            btnViewHistory.UseVisualStyleBackColor = false;
-            // 
             // mainpanel
             // 
             mainpanel.Anchor = AnchorStyles.None;
-            mainpanel.Controls.Add(btnViewHistory);
             mainpanel.Controls.Add(txtSearch);
             mainpanel.Controls.Add(lblSearch);
             mainpanel.Controls.Add(headerPanel);

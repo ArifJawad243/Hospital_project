@@ -69,30 +69,13 @@ namespace WinFormsApp1
 
         private void OnMainFormClosed(object? sender, FormClosedEventArgs e)
         {
-            // If the login form closed:
-            if (sender is login_form)
-            {
-                // If login produced a valid session, open the appropriate dashboard.
-                if (AppSession.UserID > 0 && !string.IsNullOrEmpty(AppSession.RoleName))
-                {
-                    ShowDashboardForRole();
-                    return;
-                }
-                // Otherwise user closed login without authenticating -> exit app.
-                ExitThread();
-                return;
-            }
-
-            // Any other form (likely a dashboard) closed:
-            // If a session still exists, re-open the dashboard for that role.
+            // If a login just completed (session established), open the correct dashboard
             if (AppSession.UserID > 0 && !string.IsNullOrEmpty(AppSession.RoleName))
             {
                 ShowDashboardForRole();
                 return;
             }
-
-            // No active session (e.g. user logged out) -> show login.
-            ShowLogin();
+            ExitThread();
         }
     }
 }

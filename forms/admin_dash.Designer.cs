@@ -68,6 +68,7 @@
             button3.Text = "Users";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -85,6 +86,7 @@
             button4.Text = "Patients";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button2
             // 
@@ -101,6 +103,7 @@
             button2.Text = "Doctors";
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -118,6 +121,7 @@
             button1.Text = "Appointments";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel2
             // 
@@ -161,6 +165,7 @@
             Name = "admin_dash";
             Text = "admin_dash";
             FormClosed += admin_dash_FormClosed;
+            Load += admin_dash_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ResumeLayout(false);

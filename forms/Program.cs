@@ -15,7 +15,6 @@ namespace WinFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Run single message loop managed by AppContext
             Application.Run(new AppContext());
         }
     }

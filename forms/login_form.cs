@@ -28,18 +28,10 @@ namespace WinFormsApp1
             }
             else
             {
-                // Failed login
                 MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-
             this.Close();
-        }
-
-        private void txtuname_KeyDown(object sender, KeyEventArgs e)
-        {
-
         }
     }
 }

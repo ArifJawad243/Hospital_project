@@ -25,25 +25,19 @@ namespace HospitalManagementSystem
             AppSession.Logout();
         }
 
-        /// <summary>
-        /// Load appointments for the current doctor (AppSession.DoctorID) into a DataTable
-        /// and bind it to the dgvAppointments DataGridView.
-        /// </summary>
+        
         private void LoadAppointments(string status = "All", string name = "")
         {
             dtAppointments.Clear();
 
-            // Ensure we have a doctor context
             if (!AppSession.DoctorID.HasValue || AppSession.DoctorID.Value < 1)
             {
-                // No doctor assigned in session -- clear grid and return
                 dgvAppointments.DataSource = null;
                 return;
             }
 
             using (SqlConnection conn = dbhelper.GetConnection())
             {
-                // Select useful columns and alias them for the grid
                 string query = @"
 SELECT
     a.AppointmentID,
@@ -61,7 +55,6 @@ JOIN Doctors d ON a.DoctorID = d.DoctorID
 JOIN Users u ON d.UserID = u.UserID
 WHERE a.DoctorID = @DoctorID";
 
-                // Use a case-insensitive check so callers can pass "ALL", "All", "all" etc.
                 bool includeStatus = !string.Equals(status, "All", StringComparison.OrdinalIgnoreCase);
                 if (includeStatus)
                 {
@@ -90,9 +83,8 @@ WHERE a.DoctorID = @DoctorID";
                             adapter.Fill(dtAppointments);
                             dgvAppointments.DataSource = dtAppointments;
                         }
-                        // Ensure default selection for filter (optional)
                         if (cmbFilter.Items.Count > 0 && cmbFilter.SelectedIndex == -1)
-                            cmbFilter.SelectedIndex = 0; // "All"
+                            cmbFilter.SelectedIndex = 0;
                     }
                     catch (SqlException ex)
                     {
@@ -103,7 +95,6 @@ WHERE a.DoctorID = @DoctorID";
             }
         }
 
-        // Live-search handler: filters the bound DataTable by PatientName as user types in txtSearch
         private void txtSearch_TextChanged(object? sender, EventArgs e)
         {
             LoadAppointments(cmbFilter.Text, txtSearch.Text);
@@ -116,7 +107,6 @@ WHERE a.DoctorID = @DoctorID";
 
         private void btnUpdateStatus_Click(object sender, EventArgs e)
         {
-            // Validate selection, status and diagnosis
             if (dgvAppointments.SelectedRows.Count == 0 || cmbStatus.SelectedIndex == -1)
             {
                 MessageBox.Show("Please fill out both appointment status and diagnosis.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);

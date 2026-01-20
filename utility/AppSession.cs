@@ -44,7 +44,6 @@ namespace WinFormsApp1.utility
                             string fullName = reader.GetString(1);
                             string roleName = reader.GetString(2);
 
-                            // populate session
                             AppSession.UserID = id;
                             AppSession.Username = uname;
                             if (roleName != null)
@@ -56,7 +55,6 @@ namespace WinFormsApp1.utility
                                 AppSession.RoleName = string.Empty;
                             }
 
-                            // If role is DOCTOR, try to resolve DoctorID from DB
                             if (!string.IsNullOrEmpty(roleName) && string.Equals(roleName, "DOCTOR", StringComparison.OrdinalIgnoreCase))
                             {
                                 int docId = dbhelper.getDoctorID(fullName);
@@ -80,7 +78,6 @@ namespace WinFormsApp1.utility
                 }
                 catch (SqlException)
                 {
-                    // log if you have logging; return -1 to indicate failure
                     return -1;
                 }
             }

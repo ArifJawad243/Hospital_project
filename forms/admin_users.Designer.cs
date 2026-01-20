@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "admin_users";
+            dgvusers = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvusers).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvusers
+            // 
+            dgvusers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvusers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dgvusers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvusers.Location = new Point(382, 170);
+            dgvusers.Name = "dgvusers";
+            dgvusers.Size = new Size(905, 402);
+            dgvusers.TabIndex = 0;
+            // 
+            // admin_users
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1299, 584);
+            Controls.Add(dgvusers);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "admin_users";
+            Text = "admin_users";
+            Load += admin_users_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvusers).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dgvusers;
     }
 }

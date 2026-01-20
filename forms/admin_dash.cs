@@ -32,5 +32,29 @@ namespace HospitalApp.forms
         {
             AppSession.Logout();
         }
+
+        private void admin_dash_Load(object sender, EventArgs e)
+        {
+            loadform(new admin_appointments());
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadform(new admin_appointments());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            loadform(new admin_doctors());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            loadform(new admin_patients());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            loadform(new admin_users());
+        }
     }
 }
