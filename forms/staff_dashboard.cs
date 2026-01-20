@@ -30,8 +30,8 @@ namespace WinFormsApp1
         }
         private void close_button_Click(object sender, EventArgs e)
         {
+            AppSession.Logout();
             this.Close();
-            Program.NextAction = "EXIT";
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -49,13 +49,17 @@ namespace WinFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.NextAction = "LOGIN";
+            AppSession.Logout();
             this.Close();
+        }
+
+        private void staff_dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
             AppSession.Logout();
         }
     }

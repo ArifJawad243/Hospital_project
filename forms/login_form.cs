@@ -20,17 +20,26 @@ namespace WinFormsApp1
 
         private void login_confirm_button_Click(object sender, EventArgs e)
         {
-            AppSession.UserID = 5;
-            Program.NextAction = "DASHBOARD";
+            string username = txtuname.Text;
+            string password = txtpass.Text;
+            if (AppSession.Login(username, password) > 0)
+            {
+                this.Close();
+            }
+            else
+            {
+                // Failed login
+                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
             this.Close();
         }
 
-        private void login_form_FormClosed(object sender, FormClosedEventArgs e)
+        private void txtuname_KeyDown(object sender, KeyEventArgs e)
         {
-            if (Program.NextAction != "DASHBOARD")
-            {
-                Program.NextAction = "EXIT";
-            }
+
         }
     }
 }

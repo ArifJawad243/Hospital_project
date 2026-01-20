@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtuname = new TextBox();
+            txtpass = new TextBox();
             label2 = new Label();
             label3 = new Label();
             login_confirm_button = new Button();
@@ -41,45 +41,46 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 22F);
-            label1.Location = new Point(419, 83);
+            label1.Location = new Point(390, 65);
             label1.Name = "label1";
-            label1.Size = new Size(196, 41);
+            label1.Size = new Size(105, 41);
             label1.TabIndex = 0;
-            label1.Text = "LOGIN FORM";
+            label1.Text = "LOGIN";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtuname
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.BackColor = SystemColors.Window;
-            textBox1.Location = new Point(397, 182);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(278, 23);
-            textBox1.TabIndex = 1;
+            txtuname.Anchor = AnchorStyles.None;
+            txtuname.BackColor = SystemColors.Window;
+            txtuname.Location = new Point(313, 138);
+            txtuname.Name = "txtuname";
+            txtuname.Size = new Size(278, 23);
+            txtuname.TabIndex = 1;
+            txtuname.KeyDown += txtuname_KeyDown;
             // 
-            // textBox2
+            // txtpass
             // 
-            textBox2.Anchor = AnchorStyles.None;
-            textBox2.Location = new Point(397, 246);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(278, 23);
-            textBox2.TabIndex = 2;
+            txtpass.Anchor = AnchorStyles.None;
+            txtpass.Location = new Point(313, 202);
+            txtpass.Name = "txtpass";
+            txtpass.Size = new Size(278, 23);
+            txtpass.TabIndex = 2;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(334, 185);
+            label2.Location = new Point(234, 141);
             label2.Name = "label2";
-            label2.Size = new Size(36, 15);
+            label2.Size = new Size(60, 15);
             label2.TabIndex = 3;
-            label2.Text = "Email";
+            label2.Text = "Username";
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Location = new Point(318, 249);
+            label3.Location = new Point(234, 205);
             label3.Name = "label3";
             label3.Size = new Size(52, 15);
             label3.TabIndex = 4;
@@ -88,7 +89,7 @@
             // login_confirm_button
             // 
             login_confirm_button.Anchor = AnchorStyles.None;
-            login_confirm_button.Location = new Point(487, 306);
+            login_confirm_button.Location = new Point(403, 262);
             login_confirm_button.Name = "login_confirm_button";
             login_confirm_button.Size = new Size(75, 23);
             login_confirm_button.TabIndex = 7;
@@ -98,18 +99,18 @@
             // 
             // login_form
             // 
+            AcceptButton = login_confirm_button;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1051, 539);
+            ClientSize = new Size(883, 450);
             Controls.Add(login_confirm_button);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtpass);
+            Controls.Add(txtuname);
             Controls.Add(label1);
             Name = "login_form";
             StartPosition = FormStartPosition.CenterScreen;
-            FormClosed += login_form_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -117,8 +118,8 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtuname;
+        private TextBox txtpass;
         private Label label2;
         private Label label3;
         private Button login_confirm_button;

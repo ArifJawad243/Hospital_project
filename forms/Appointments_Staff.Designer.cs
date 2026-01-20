@@ -50,16 +50,16 @@
             dgv_appointments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_appointments.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgv_appointments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_appointments.Location = new Point(368, 144);
+            dgv_appointments.Location = new Point(400, 144);
             dgv_appointments.Name = "dgv_appointments";
-            dgv_appointments.Size = new Size(745, 341);
+            dgv_appointments.Size = new Size(827, 341);
             dgv_appointments.TabIndex = 0;
             dgv_appointments.RowHeaderMouseClick += dgv_appointments_RowHeaderMouseClick;
             // 
             // txtboxName
             // 
             txtboxName.Anchor = AnchorStyles.None;
-            txtboxName.Location = new Point(132, 141);
+            txtboxName.Location = new Point(164, 141);
             txtboxName.Name = "txtboxName";
             txtboxName.Size = new Size(181, 23);
             txtboxName.TabIndex = 1;
@@ -67,7 +67,7 @@
             // txtboxContact
             // 
             txtboxContact.Anchor = AnchorStyles.None;
-            txtboxContact.Location = new Point(132, 190);
+            txtboxContact.Location = new Point(164, 190);
             txtboxContact.Name = "txtboxContact";
             txtboxContact.Size = new Size(181, 23);
             txtboxContact.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(47, 144);
+            label1.Location = new Point(79, 144);
             label1.Name = "label1";
             label1.Size = new Size(79, 15);
             label1.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(710, 119);
+            label2.Location = new Point(766, 126);
             label2.Name = "label2";
             label2.Size = new Size(83, 15);
             label2.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Location = new Point(47, 193);
+            label3.Location = new Point(79, 193);
             label3.Name = "label3";
             label3.Size = new Size(71, 15);
             label3.TabIndex = 5;
@@ -106,7 +106,7 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Location = new Point(47, 293);
+            label4.Location = new Point(79, 293);
             label4.Name = "label4";
             label4.Size = new Size(45, 15);
             label4.TabIndex = 9;
@@ -116,7 +116,7 @@
             // 
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
-            label5.Location = new Point(47, 244);
+            label5.Location = new Point(79, 244);
             label5.Name = "label5";
             label5.Size = new Size(73, 15);
             label5.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Location = new Point(49, 343);
+            label6.Location = new Point(81, 343);
             label6.Name = "label6";
             label6.Size = new Size(43, 15);
             label6.TabIndex = 11;
@@ -135,7 +135,7 @@
             // txtboxDoctor
             // 
             txtboxDoctor.Anchor = AnchorStyles.None;
-            txtboxDoctor.Location = new Point(132, 340);
+            txtboxDoctor.Location = new Point(164, 340);
             txtboxDoctor.Name = "txtboxDoctor";
             txtboxDoctor.Size = new Size(181, 23);
             txtboxDoctor.TabIndex = 10;
@@ -146,7 +146,7 @@
             button1.BackColor = Color.Lime;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(243, 444);
+            button1.Location = new Point(275, 444);
             button1.Name = "button1";
             button1.Size = new Size(119, 41);
             button1.TabIndex = 12;
@@ -158,7 +158,7 @@
             // 
             dtbDOB.Anchor = AnchorStyles.None;
             dtbDOB.Format = DateTimePickerFormat.Short;
-            dtbDOB.Location = new Point(132, 238);
+            dtbDOB.Location = new Point(164, 238);
             dtbDOB.Name = "dtbDOB";
             dtbDOB.Size = new Size(181, 23);
             dtbDOB.TabIndex = 14;
@@ -169,7 +169,7 @@
             cmbGender.Anchor = AnchorStyles.None;
             cmbGender.FormattingEnabled = true;
             cmbGender.Items.AddRange(new object[] { "Male", "Female" });
-            cmbGender.Location = new Point(132, 290);
+            cmbGender.Location = new Point(164, 290);
             cmbGender.Name = "cmbGender";
             cmbGender.Size = new Size(181, 23);
             cmbGender.TabIndex = 13;
@@ -178,7 +178,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1125, 572);
+            ClientSize = new Size(1239, 572);
             Controls.Add(dtbDOB);
             Controls.Add(cmbGender);
             Controls.Add(button1);

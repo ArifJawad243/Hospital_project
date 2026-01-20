@@ -32,7 +32,7 @@ namespace WinFormsApp1
             dt.Clear();
             using (SqlConnection conn = dbhelper.GetConnection())
             {
-                string query = "SELECT a.AppointmentDate AS AppointmentTime, p.FullName AS PatientName, p.ContactNumber, p.DateOfBirth, p.Gender, u.FullName AS DoctorName, a.Status FROM Appointments a JOIN patients p ON a.patientid = p.patientid JOIN Doctors d ON a.DoctorID = d.DoctorID JOIN Users u ON d.UserID = u.UserID;";
+                string query = "SELECT CAST(a.AppointmentDate AS DATE) AS AppointmentTime, p.FullName AS PatientName, p.ContactNumber, DATEDIFF(YEAR, p.DateOfBirth, GETDATE()) AS Age, p.Gender, u.FullName AS DoctorName, a.Status FROM Appointments a JOIN patients p ON a.patientid = p.patientid JOIN Doctors d ON a.DoctorID = d.DoctorID JOIN Users u ON d.UserID = u.UserID ORDER BY a.AppointmentDate DESC;";
                 conn.Open();
                 SqlDataAdapter adpt = new SqlDataAdapter(query, conn);
                 adpt.Fill(dt);
@@ -63,17 +63,17 @@ namespace WinFormsApp1
 
                 if (!p.SaveToDatabase())
                 {
-                    MessageBox.Show("Failed to save patient information."); 
+                    MessageBox.Show("Failed to save patient information.");
                     p = null;
                     return;
                 }
                 appointment a = new appointment();
                 a.patientID = p.patientID;
                 int docId = dbhelper.getDoctorID(txtboxDoctor.Text);
-                if(docId < 1)
-                {   
-                    MessageBox.Show("Invalid Doctor Name."); 
-                    return; 
+                if (docId < 1)
+                {
+                    MessageBox.Show("Invalid Doctor Name.");
+                    return;
                 }
                 a.doctorID = docId;
                 a.staffID = AppSession.UserID;
