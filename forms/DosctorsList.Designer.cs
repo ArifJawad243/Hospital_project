@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class Appointment
+    partial class DoctorsList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,28 +29,44 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            dgv_doctorlist = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgv_doctorlist).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(374, 262);
+            label1.Location = new Point(450, 33);
             label1.Name = "label1";
-            label1.Size = new Size(279, 37);
-            label1.TabIndex = 2;
-            label1.Text = "Appointment Booking";
+            label1.Size = new Size(156, 37);
+            label1.TabIndex = 0;
+            label1.Text = "Doctors List";
             // 
-            // Appointment
+            // dgv_doctorlist
+            // 
+            dgv_doctorlist.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgv_doctorlist.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_doctorlist.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dgv_doctorlist.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_doctorlist.Location = new Point(153, 99);
+            dgv_doctorlist.Name = "dgv_doctorlist";
+            dgv_doctorlist.Size = new Size(759, 346);
+            dgv_doctorlist.TabIndex = 1;
+            // 
+            // DoctorsList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1066, 595);
+            ClientSize = new Size(1043, 542);
+            Controls.Add(dgv_doctorlist);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Appointment";
+            Name = "DoctorsList";
             Text = "Form1";
+            Load += DoctorsList_Load;
+            ((System.ComponentModel.ISupportInitialize)dgv_doctorlist).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -58,5 +74,6 @@
         #endregion
 
         private Label label1;
+        private DataGridView dgv_doctorlist;
     }
 }

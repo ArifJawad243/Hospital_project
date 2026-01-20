@@ -42,6 +42,7 @@
             mainpanel.Name = "mainpanel";
             mainpanel.Size = new Size(1170, 568);
             mainpanel.TabIndex = 0;
+            mainpanel.Paint += mainpanel_Paint;
             // 
             // panel2
             // 
@@ -78,6 +79,7 @@
             Name = "mainform";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            FormClosing += mainform_FormClosing;
             Load += mainform_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

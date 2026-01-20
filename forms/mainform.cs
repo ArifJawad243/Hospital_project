@@ -25,11 +25,24 @@ namespace WinFormsApp1
 
         }
 
-        
+
 
         private void mainform_Load(object sender, EventArgs e)
         {
             loadform(new login_form());
+        }
+
+        private void mainpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mainform_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Program.NextAction != "DASHBOARD")
+            {
+                Program.NextAction = "EXIT";          
+            }
         }
     }
 }

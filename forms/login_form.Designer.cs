@@ -33,8 +33,6 @@
             textBox2 = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            back_button = new Button();
-            label4 = new Label();
             login_confirm_button = new Button();
             SuspendLayout();
             // 
@@ -87,27 +85,6 @@
             label3.TabIndex = 4;
             label3.Text = "Pasword";
             // 
-            // back_button
-            // 
-            back_button.Anchor = AnchorStyles.None;
-            back_button.Location = new Point(540, 405);
-            back_button.Name = "back_button";
-            back_button.Size = new Size(75, 23);
-            back_button.TabIndex = 5;
-            back_button.Text = "Register";
-            back_button.UseVisualStyleBackColor = true;
-            back_button.Click += back_button_Click;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Location = new Point(403, 409);
-            label4.Name = "label4";
-            label4.Size = new Size(131, 15);
-            label4.TabIndex = 6;
-            label4.Text = "Don't have an account?";
-            // 
             // login_confirm_button
             // 
             login_confirm_button.Anchor = AnchorStyles.None;
@@ -125,16 +102,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1051, 539);
             Controls.Add(login_confirm_button);
-            Controls.Add(label4);
-            Controls.Add(back_button);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "login_form";
-            Load += Form2_Load;
+            StartPosition = FormStartPosition.CenterScreen;
+            FormClosed += login_form_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,8 +121,6 @@
         private TextBox textBox2;
         private Label label2;
         private Label label3;
-        private Button back_button;
-        private Label label4;
         private Button login_confirm_button;
     }
 }
